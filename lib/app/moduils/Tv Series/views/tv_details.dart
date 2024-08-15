@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import '../../../../model/populer_model.dart';
+import '../../../../model/tv_model.dart';
 
-class PopulerDetails extends StatelessWidget {
-  final PopulerResults movie;
-
-  PopulerDetails({required this.movie});
+class TvDetails extends StatelessWidget {
+  final TvResults tv;
+  TvDetails({required this.tv});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(movie.originalTitle ?? 'Details'),
+        title: Text(tv.originalName ?? 'Details'),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -19,28 +18,32 @@ class PopulerDetails extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Image.network(
-                'https://image.tmdb.org/t/p/w500${movie.posterPath}',
+                'https://image.tmdb.org/t/p/w500${tv.posterPath}',
                 fit: BoxFit.cover,
                 height: 400,
                 width: double.infinity,
               ),
               SizedBox(height: 16.0),
               Text(
-                movie.originalTitle ?? '',
+                '',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               Text(
-                'Release Date- ${movie.releaseDate ?? 'Unknown Date'} ',
+                'First Year Date- ${tv.firstAirDate ?? 'Unknown Date'} ',
                 style: TextStyle(fontSize: 16),
               ),
               Text(
-                'Rating: ${movie.voteAverage}',
+                'Rating: ${tv.voteAverage}',
+                style: TextStyle(fontSize: 16),
+              ),
+              Text(
+                'Country for: ${tv.originCountry}',
                 style: TextStyle(fontSize: 16),
               ),
               Divider(),
               SizedBox(height: 8.0),
               Text(
-                movie.overview ?? '',
+                tv.overview ?? '',
                 style: TextStyle(fontSize: 16),
               ),
             ],

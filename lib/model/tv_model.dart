@@ -1,6 +1,6 @@
 class Tvmodel {
   int? page;
-  List<Results>? results;
+  List<TvResults>? results;
   int? totalPages;
   int? totalResults;
 
@@ -9,9 +9,9 @@ class Tvmodel {
   Tvmodel.fromJson(Map<String, dynamic> json) {
     page = json['page'];
     if (json['results'] != null) {
-      results = <Results>[];
+      results = <TvResults>[];
       json['results'].forEach((v) {
-        results!.add(new Results.fromJson(v));
+        results!.add(new TvResults.fromJson(v));
       });
     }
     totalPages = json['total_pages'];
@@ -30,7 +30,7 @@ class Tvmodel {
   }
 }
 
-class Results {
+class TvResults {
   bool? adult;
   String? backdropPath;
   List<int>? genreIds;
@@ -46,7 +46,7 @@ class Results {
   double? voteAverage;
   int? voteCount;
 
-  Results(
+  TvResults(
       {this.adult,
         this.backdropPath,
         this.genreIds,
@@ -62,7 +62,7 @@ class Results {
         this.voteAverage,
         this.voteCount});
 
-  Results.fromJson(Map<String, dynamic> json) {
+  TvResults.fromJson(Map<String, dynamic> json) {
     adult = json['adult'];
     backdropPath = json['backdrop_path'];
     genreIds = json['genre_ids'].cast<int>();

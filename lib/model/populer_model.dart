@@ -1,6 +1,6 @@
 class PopulerModel {
   int? page;
-  List<Results>? results;
+  List<PopulerResults>? results;
   int? totalPages;
   int? totalResults;
 
@@ -9,9 +9,9 @@ class PopulerModel {
   PopulerModel.fromJson(Map<String, dynamic> json) {
     page = json['page'];
     if (json['results'] != null) {
-      results = <Results>[];
+      results = <PopulerResults>[];
       json['results'].forEach((v) {
-        results!.add(new Results.fromJson(v));
+        results!.add(new PopulerResults.fromJson(v));
       });
     }
     totalPages = json['total_pages'];
@@ -30,7 +30,7 @@ class PopulerModel {
   }
 }
 
-class Results {
+class PopulerResults {
   bool? adult;
   String? backdropPath;
   List<int>? genreIds;
@@ -46,7 +46,7 @@ class Results {
   double? voteAverage;
   int? voteCount;
 
-  Results(
+  PopulerResults(
       {this.adult,
       this.backdropPath,
       this.genreIds,
@@ -62,7 +62,7 @@ class Results {
       this.voteAverage,
       this.voteCount});
 
-  Results.fromJson(Map<String, dynamic> json) {
+  PopulerResults.fromJson(Map<String, dynamic> json) {
     adult = json['adult'];
     backdropPath = json['backdrop_path'];
     genreIds = json['genre_ids'].cast<int>();

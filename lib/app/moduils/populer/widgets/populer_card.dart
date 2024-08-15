@@ -8,7 +8,7 @@ import '../../../../widgtets/custom_card.dart';
 class PopulerCard extends StatelessWidget {
   PopulerCard({Key? key}) : super(key: key);
 
-  final  apiService = Get.put(ApiService());
+  final apiService = Get.put(ApiService());
 
   @override
   Widget build(BuildContext context) {
@@ -16,12 +16,12 @@ class PopulerCard extends StatelessWidget {
       future: apiService.getPopulerMovies(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          List<Results> results = snapshot.data!.results ?? [];
+          List<PopulerResults> results = snapshot.data!.results ?? [];
           return SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
               children: [
-                for (int i = 0; i < results.length; i++)
+                for (int i = 0; i < 4; i++)
                   CustomCard(
                     title: results[i].originalTitle ?? 'No Title',
                     title2: results[i].overview ?? 'No Title',

@@ -7,6 +7,7 @@ import 'package:tmdb_task/app/moduils/populer/widgets/populer_card.dart';
 import 'package:tmdb_task/widgtets/text1.dart';
 
 import '../../../../widgtets/text2.dart';
+import '../../Tv Series/views/tv_seeall.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -51,14 +52,35 @@ class HomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text1(
-                    text: "Movies",
+                    text: "Tv Series",
                   ),
                   Text1(
                     text: "See all",
                     size: 14.0,
                     color: Colors.blue,
                     ontap: () {
-                      Get.to(() => PopulerSeeall());
+                      Get.to(() => TvSeeall());
+                    },
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              TvSeriesCard(),
+              SizedBox(height: 20.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text1(
+                    text: "Tv Series",
+                  ),
+                  Text1(
+                    text: "See all",
+                    size: 14.0,
+                    color: Colors.blue,
+                    ontap: () {
+                      Get.to(() => TvSeeall());
                     },
                   ),
                 ],
