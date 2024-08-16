@@ -1,8 +1,9 @@
 import 'dart:convert';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+import 'package:tmdb_task/model/musicModel.dart';
 import 'package:tmdb_task/model/tv_model.dart';
-import '../model/musicModel.dart';
 import '../model/populer_model.dart';
 
 class ApiService extends GetxController {
@@ -30,11 +31,11 @@ class ApiService extends GetxController {
 
   Future<MusicModel> getMusic() async {
     final response = await http.get(Uri.parse(
-        "https://api.themoviedb.org/3/discover/tv?api_key=52382e42442992bd5f0045d50a66a584"));
+        "https://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=1b065b7e91377ded9c905ee01c595a6e&format=json&page=1"));
     if (response.statusCode == 200) {
       return MusicModel.fromJson(jsonDecode(response.body));
     } else {
-      throw Exception('faild');
+      throw Fluttertoast.showToast(msg: "Some Problem");
     }
   }
 }

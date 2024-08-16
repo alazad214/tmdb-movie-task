@@ -9,6 +9,7 @@ import 'package:tmdb_task/widgtets/text1.dart';
 import '../../../../widgtets/text2.dart';
 import '../../Tv Series/views/tv_seeall.dart';
 import '../../music/views/music_card.dart';
+import '../../music/views/music_seeall.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -81,7 +82,7 @@ class HomeScreen extends StatelessWidget {
                     size: 14.0,
                     color: Colors.blue,
                     ontap: () {
-                      Get.to(() => TvSeeall());
+                      Get.to(() => MusicSeeall());
                     },
                   ),
                 ],
@@ -89,6 +90,7 @@ class HomeScreen extends StatelessWidget {
               SizedBox(
                 height: 10.0,
               ),
+              SizedBox(child: MusicCard())
             ],
           ),
         ),

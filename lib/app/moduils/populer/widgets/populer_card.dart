@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:tmdb_task/app/moduils/populer/views/populer_details.dart';
 import '../../../../model/populer_model.dart';
 import '../../../../service/api_service.dart';
+import '../../../../widgets/simmer.dart';
 import '../../../../widgtets/custom_card.dart';
 
 class PopulerCard extends StatelessWidget {
@@ -39,7 +40,7 @@ class PopulerCard extends StatelessWidget {
             ),
           );
         }
-        return Center(child: CircularProgressIndicator());
+        return Shimmer();
       },
     );
   }

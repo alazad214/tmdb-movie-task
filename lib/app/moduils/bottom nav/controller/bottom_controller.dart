@@ -1,23 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import '../../add to/views/add_to_screen.dart';
-import '../../course/views/course_screen.dart';
+import '../../filter search/views/filter_screen.dart';
 import '../../home/views/home_screen.dart';
+import '../../search/views/search_screen.dart';
 import '../../settings/views/settings_screen.dart';
 
 class BottomController extends GetxController {
-  // Observable index
   var currentIndex = 0.obs;
 
-  // List of pages
   final List<Widget> pages = [
     const HomeScreen(),
-    const CourseScreen(),
-    const AddToScreen(),
-     SettingsScreen(),
+    const SearchScreen(),
+    const FilterScreen(),
+    SettingsScreen(),
   ];
 
-  // Method to change index
   void changeIndex(int index) {
     currentIndex.value = index;
   }
