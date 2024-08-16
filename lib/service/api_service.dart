@@ -4,24 +4,35 @@ import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:tmdb_task/model/musicModel.dart';
 import 'package:tmdb_task/model/tv_model.dart';
+import '../core/app_api.dart';
 import '../model/populer_model.dart';
 
 class ApiService extends GetxController {
-  Future<PopulerModel> getPopulerMovies() async {
-    final response = await http.get(Uri.parse(
-        "https://api.themoviedb.org/3/movie/popular?api_key=52382e42442992bd5f0045d50a66a584"));
-
+  //Get Movie Genre
+  Future<List<dynamic>> getMovieGenres() async {
+    final response = await http.get(Uri.parse(moviegenreUlr));
     if (response.statusCode == 200) {
-      print(jsonDecode(response.body));
+      final jsonData = jsonDecode(response.body);
+      return jsonData['genres'];
+    } else {
+      throw Exception('Failed to load genres');
+    }
+  }
+
+  Future<PopulerModel> getPopulerMovies({List<int>? genreIds}) async {
+    String genres = genreIds != null && genreIds.isNotEmpty
+        ? '&with_genres=${genreIds.join(',')}'
+        : '';
+    final response = await http.get(Uri.parse("$getmovie$genres"));
+    if (response.statusCode == 200) {
       return PopulerModel.fromJson(jsonDecode(response.body));
     } else {
-      throw Exception('Failed ');
+      throw Exception('Failed to load movies');
     }
   }
 
   Future<Tvmodel> getTvSeries() async {
-    final response = await http.get(Uri.parse(
-        "https://api.themoviedb.org/3/discover/tv?api_key=52382e42442992bd5f0045d50a66a584"));
+    final response = await http.get(Uri.parse(gettv));
     if (response.statusCode == 200) {
       return Tvmodel.fromJson(jsonDecode(response.body));
     } else {
@@ -30,8 +41,7 @@ class ApiService extends GetxController {
   }
 
   Future<MusicModel> getMusic() async {
-    final response = await http.get(Uri.parse(
-        "https://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=1b065b7e91377ded9c905ee01c595a6e&format=json&page=1"));
+    final response = await http.get(Uri.parse(getmusic));
     if (response.statusCode == 200) {
       return MusicModel.fromJson(jsonDecode(response.body));
     } else {
