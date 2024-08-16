@@ -4,13 +4,18 @@ import 'package:tmdb_task/model/populer_model.dart';
 import 'package:tmdb_task/service/api_service.dart';
 import 'package:tmdb_task/widgtets/simmer2.dart';
 import 'package:tmdb_task/widgtets/text1.dart';
-import 'package:tmdb_task/widgtets/text2.dart';
 import '../../../../widgtets/custom_card2.dart';
 import 'genrePage.dart';
 import 'populer_details.dart';
 
-class PopulerSeeall extends StatelessWidget {
+class PopulerSeeall extends StatefulWidget {
+  @override
+  State<PopulerSeeall> createState() => _PopulerSeeallState();
+}
+
+class _PopulerSeeallState extends State<PopulerSeeall> {
   final ApiService apiService = Get.put(ApiService());
+
   final List<int> _selectedGenres = [];
 
   void _navigateToGenreSelection(BuildContext context) {
@@ -25,7 +30,7 @@ class PopulerSeeall extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Movies"),
-      titleSpacing: 0,
+        titleSpacing: 0,
       ),
       body: FutureBuilder<PopulerModel>(
         future: apiService.getPopulerMovies(genreIds: _selectedGenres),
@@ -43,10 +48,11 @@ class PopulerSeeall extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text1(text: "Filter"),
-                            IconButton(onPressed: (){
-                              _navigateToGenreSelection(context);
-                            }, icon: Icon(Icons.filter_list))
-
+                            IconButton(
+                                onPressed: () {
+                                  _navigateToGenreSelection(context);
+                                },
+                                icon: Icon(Icons.filter_list))
                           ],
                         ),
                       ),

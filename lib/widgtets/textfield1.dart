@@ -7,7 +7,8 @@ class Textfield1 extends StatelessWidget {
       this.suffixicon,
       this.validation,
       this.obscuretext,
-      this.onchanged, this.controller});
+      this.onchanged,
+      this.controller, this.hinttext2});
 
   final hinttext;
   final IconData? suffixicon;
@@ -15,10 +16,10 @@ class Textfield1 extends StatelessWidget {
   final obscuretext;
   final onchanged;
   final controller;
+  final hinttext2;
 
   @override
   Widget build(BuildContext context) {
-
     return Padding(
       padding: const EdgeInsets.only(right: 20, top: 5, left: 20),
       child: TextFormField(
@@ -28,6 +29,7 @@ class Textfield1 extends StatelessWidget {
         obscureText: obscuretext ?? false,
         decoration: InputDecoration(
           label: hinttext,
+          hintText: hinttext2,
           suffixIcon: Icon(suffixicon),
           filled: true,
           fillColor: Colors.white,

@@ -4,6 +4,8 @@ import 'package:tmdb_task/app/moduils/music/views/music_details.dart';
 import 'package:tmdb_task/model/musicModel.dart';
 import 'package:tmdb_task/widgtets/custom_card2.dart';
 import '../../../../service/api_service.dart';
+import '../../../../widgtets/simmer2.dart';
+import '../../../../widgtets/text1.dart';
 
 class MusicSeeall extends StatelessWidget {
   MusicSeeall({super.key});
@@ -25,6 +27,18 @@ class MusicSeeall extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 10.0),
                     child: Column(
                       children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 15.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text1(text: "Filter"),
+                              IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(Icons.filter_list))
+                            ],
+                          ),
+                        ),
                         for (int i = 0; i < tracks.length; i++)
                           InkWell(
                             onTap: () {
@@ -41,7 +55,7 @@ class MusicSeeall extends StatelessWidget {
                   ),
                 );
               }
-              return Center(child: CircularProgressIndicator());
+              return Shimmer2();
             }));
   }
 }

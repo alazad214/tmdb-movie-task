@@ -15,7 +15,7 @@ class ApiService extends GetxController {
       final jsonData = jsonDecode(response.body);
       return jsonData['genres'];
     } else {
-      throw Exception('Failed to load genres');
+      throw Exception('Failed"');
     }
   }
 
@@ -27,7 +27,7 @@ class ApiService extends GetxController {
     if (response.statusCode == 200) {
       return PopulerModel.fromJson(jsonDecode(response.body));
     } else {
-      throw Exception('Failed to load movies');
+      throw Exception('Failed');
     }
   }
 

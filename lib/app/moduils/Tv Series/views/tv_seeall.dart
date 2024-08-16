@@ -3,8 +3,9 @@ import 'package:get/get.dart';
 import 'package:tmdb_task/app/moduils/Tv%20Series/views/tv_details.dart';
 import 'package:tmdb_task/model/tv_model.dart';
 import 'package:tmdb_task/widgtets/custom_card2.dart';
-
+import 'package:tmdb_task/widgtets/simmer2.dart';
 import '../../../../service/api_service.dart';
+import '../../../../widgtets/text1.dart';
 
 class TvSeeall extends StatelessWidget {
   TvSeeall({super.key});
@@ -26,6 +27,18 @@ class TvSeeall extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 10.0),
                     child: Column(
                       children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 15.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text1(text: "Filter"),
+                              IconButton(onPressed: (){
+                              }, icon: Icon(Icons.filter_list))
+
+                            ],
+                          ),
+                        ),
                         for (int i = 0; i < results.length; i++)
                           InkWell(
                             onTap: () {
@@ -44,7 +57,7 @@ class TvSeeall extends StatelessWidget {
                   ),
                 );
               }
-              return Center(child: CircularProgressIndicator());
+              return Shimmer2();
             }));
   }
 }
