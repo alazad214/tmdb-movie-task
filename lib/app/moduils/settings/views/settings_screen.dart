@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
-import 'package:tmdb_task/app/moduils/auth/register/views/register_screen.dart';
 import 'package:tmdb_task/app/moduils/settings/views/history.dart';
 import 'package:tmdb_task/app/moduils/settings/views/terms_condition.dart';
 import 'package:tmdb_task/app/moduils/settings/widgets/settings_button.dart';
@@ -8,6 +8,7 @@ import 'about_us.dart';
 
 class SettingsScreen extends StatelessWidget {
   SettingsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,11 +40,13 @@ class SettingsScreen extends StatelessWidget {
                     Get.to(() => const History());
                   },
                 ),
-                const SettingsButton(
+                SettingsButton(
                   icon: Icons.star_rate_outlined,
                   title: "Rate This App",
+                  ontap: () {
+                    Fluttertoast.showToast(msg: "Rating Done");
+                  },
                 ),
-
               ],
             ),
           ),

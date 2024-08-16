@@ -18,20 +18,16 @@ class AuthController extends GetxController {
   checkRegister() async {
     final prefs = await SharedPreferences.getInstance();
     final savetoken = prefs.getString('token');
-    if (savetoken != null) {
-      Get.offAll(() => BottomNavScreen());
-    }
   }
 
   //REGISTATION WITH TOKEN
   Register(String token) async {
     final url =
         'https://api.themoviedb.org/3/account?api_key=$apiKey&session_id=$token';
-
     try {
       final response = await http.get(Uri.parse(url));
       if (response.statusCode == 200) {
-        this.tokenid.value = token;
+        tokenid.value = token;
         final prefs = await SharedPreferences.getInstance();
         prefs.setString('token', token);
         Get.offAll(() => BottomNavScreen());
@@ -41,11 +37,5 @@ class AuthController extends GetxController {
     } catch (e) {
       Fluttertoast.showToast(msg: "Something Wrong");
     }
-  }
-
-  clearSession() async {
-    final prefs = await SharedPreferences.getInstance();
-    prefs.remove('token');
-    tokenid.value = '';
   }
 }
