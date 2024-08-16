@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tmdb_task/model/musicModel.dart';
-import 'package:tmdb_task/widgets/custom_image.dart';
+import 'package:tmdb_task/widgtets/custom_image.dart';
 
 class MusicDetails extends StatelessWidget {
   final Track music;

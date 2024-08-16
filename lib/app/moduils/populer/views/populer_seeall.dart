@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tmdb_task/model/populer_model.dart';
 import 'package:tmdb_task/service/api_service.dart';
+import 'package:tmdb_task/widgtets/simmer2.dart';
 import '../../../../widgtets/custom_card2.dart';
+import '../../../../widgtets/simmer.dart';
 import 'genrePage.dart';
 import 'populer_details.dart';
 
@@ -62,7 +64,7 @@ class PopulerSeeall extends StatelessWidget {
               ),
             );
           } else {
-            return Center(child: Text("No data available."));
+            return Shimmer2();
           }
         },
       ),

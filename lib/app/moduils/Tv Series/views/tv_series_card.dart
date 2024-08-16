@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:tmdb_task/app/moduils/Tv%20Series/views/tv_details.dart';
 import 'package:tmdb_task/model/tv_model.dart';
 import '../../../../service/api_service.dart';
-import '../../../../widgets/simmer.dart';
+import '../../../../widgtets/simmer.dart';
 import '../../../../widgtets/custom_card.dart';
 
 class TvSeriesCard extends StatelessWidget {

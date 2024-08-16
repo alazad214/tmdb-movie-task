@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tmdb_task/app/moduils/music/views/music_details.dart';
 import 'package:tmdb_task/model/musicModel.dart';
-import 'package:tmdb_task/widgets/simmer.dart';
+import 'package:tmdb_task/widgtets/simmer.dart';
 import 'package:tmdb_task/widgtets/custom_card.dart';
 import '../../../../service/api_service.dart';
 
