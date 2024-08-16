@@ -8,6 +8,7 @@ import 'package:tmdb_task/widgtets/text1.dart';
 
 import '../../../../widgtets/text2.dart';
 import '../../Tv Series/views/tv_seeall.dart';
+import '../../music/views/music_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -73,7 +74,7 @@ class HomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text1(
-                    text: "Tv Series",
+                    text: "Music",
                   ),
                   Text1(
                     text: "See all",
@@ -88,7 +89,7 @@ class HomeScreen extends StatelessWidget {
               SizedBox(
                 height: 10.0,
               ),
-              TvSeriesCard()
+
             ],
           ),
         ),

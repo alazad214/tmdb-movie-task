@@ -1,6 +1,5 @@
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
-import '../moduils/auth/login/views/login_screen.dart';
 import '../moduils/home/views/home_screen.dart';
 import '../moduils/onboading/views/onboading_screen.dart';
 import '../moduils/splash/bindigns/splash_bindings.dart';
@@ -25,9 +24,5 @@ List<GetPage> getPages = [
   GetPage(
     name: onboading,
     page: () => const OnboadingScreen(),
-  ),
-  GetPage(
-    name: login,
-    page: () => const LoginScreen(),
   ),
 ];

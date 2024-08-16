@@ -14,7 +14,7 @@ class BottomController extends GetxController {
     const HomeScreen(),
     const CourseScreen(),
     const AddToScreen(),
-    const SettingsScreen(),
+     SettingsScreen(),
   ];
 
   // Method to change index

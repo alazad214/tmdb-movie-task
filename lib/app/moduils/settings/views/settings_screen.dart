@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+import 'package:tmdb_task/app/moduils/auth/register/views/register_screen.dart';
 import 'package:tmdb_task/app/moduils/settings/views/history.dart';
 import 'package:tmdb_task/app/moduils/settings/views/terms_condition.dart';
 import 'package:tmdb_task/app/moduils/settings/widgets/settings_button.dart';
-
 import 'about_us.dart';
 
 class SettingsScreen extends StatelessWidget {
-  const SettingsScreen({super.key});
-
+  SettingsScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +32,7 @@ class SettingsScreen extends StatelessWidget {
                     Get.to(() => const AboutUs());
                   },
                 ),
-                 SettingsButton(
+                SettingsButton(
                   icon: Icons.arrow_forward_ios,
                   title: "History",
                   ontap: () {
@@ -45,6 +43,7 @@ class SettingsScreen extends StatelessWidget {
                   icon: Icons.star_rate_outlined,
                   title: "Rate This App",
                 ),
+
               ],
             ),
           ),

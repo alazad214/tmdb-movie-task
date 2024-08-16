@@ -7,13 +7,14 @@ class Textfield1 extends StatelessWidget {
       this.suffixicon,
       this.validation,
       this.obscuretext,
-      this.onchanged});
+      this.onchanged, this.controller});
 
   final hinttext;
   final IconData? suffixicon;
   final validation;
   final obscuretext;
   final onchanged;
+  final controller;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +24,7 @@ class Textfield1 extends StatelessWidget {
       child: TextFormField(
         onChanged: onchanged,
         validator: validation,
+        controller: controller,
         obscureText: obscuretext ?? false,
         decoration: InputDecoration(
           label: hinttext,

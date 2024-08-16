@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../utils/app_string.dart';
-import '../../../../widgtets/text1.dart';
-
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
@@ -16,8 +13,9 @@ class SplashScreen extends StatelessWidget {
             Container(
                 height: screenSize.height / 1,
                 alignment: Alignment.center,
-                child: const Text1(
-                  text: AppString.name,
+                child: Image.asset(
+                  "assets/images/tmdb.jpg",
+                  width: screenSize.width / 2.5,
                 )),
           ],
         ),
