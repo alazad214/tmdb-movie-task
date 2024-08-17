@@ -1,12 +1,18 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
+import 'package:tmdb_task/app/moduils/filter%20search/views/filter_results.dart';
 import 'package:tmdb_task/widgtets/button1.dart';
 import 'package:tmdb_task/widgtets/textfield1.dart';
+import '../../ads controller/ads_controller.dart';
 import '../controller/tag_controller.dart';
 
 class FilterScreen extends StatelessWidget {
   final tagController = Get.put(TagController());
-  final TextEditingController _textEditingController = TextEditingController();
+  final _textEditingController = TextEditingController();
+  final adController = Get.put(AdController());
 
   @override
   Widget build(BuildContext context) {
@@ -102,6 +108,16 @@ class FilterScreen extends StatelessWidget {
               text: "Search",
               margin: EdgeInsets.symmetric(horizontal: 20),
               color: Colors.purple,
+              ontap: () {
+                if (tagController.chips.isNotEmpty) {
+                  adController.showInterstitialAd();
+                  Timer(Duration(seconds: 2), () {
+                    Get.to(() => FilterResults());
+                  });
+                } else {
+                  Fluttertoast.showToast(msg: "Please Enter Tag");
+                }
+              },
             ),
           ],
         ),
