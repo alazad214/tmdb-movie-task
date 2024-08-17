@@ -40,7 +40,7 @@ class SearchScreen extends StatelessWidget {
                       title2: movie.overview,
                       image: movie.posterPath != null
                           ? 'https://image.tmdb.org/t/p/w500${movie.posterPath}'
-                          : '',
+                          : 'https://via.placeholder.com/500',
                       ontap: () {},
                     ),
                   );

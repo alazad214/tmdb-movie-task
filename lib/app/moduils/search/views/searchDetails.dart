@@ -20,7 +20,9 @@ class Searchdetails extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Image.network(
-                'https://image.tmdb.org/t/p/w500${movie.posterPath}',
+                movie.posterPath != null
+                    ? 'https://image.tmdb.org/t/p/w500${movie.posterPath}'
+                    : 'https://via.placeholder.com/500',
                 fit: BoxFit.cover,
                 height: 400,
                 width: double.infinity,
