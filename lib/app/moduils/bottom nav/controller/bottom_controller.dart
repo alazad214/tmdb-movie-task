@@ -11,7 +11,7 @@ class BottomController extends GetxController {
   final List<Widget> pages = [
     const HomeScreen(),
      SearchScreen(),
-    const FilterScreen(),
+     FilterScreen(),
     SettingsScreen(),
   ];
 
