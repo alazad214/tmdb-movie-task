@@ -36,7 +36,7 @@ class RegisterScreen extends StatelessWidget {
                 child: const Text2(
                   maxline: 4,
                   text:
-                      "Please enter your session ID and move to the next screen.",
+                      "Please enter your Token ID and move to the next screen.",
                 ),
               ),
               const SizedBox(height: 20.0),

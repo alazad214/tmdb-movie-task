@@ -31,7 +31,7 @@ class BottomNavScreen extends StatelessWidget {
               selectedColor: Colors.purple,
             ),
             SalomonBottomBarItem(
-              icon: const Icon(Icons.manage_search),
+              icon: const Icon(Icons.directions_boat),
               title: const Text("Filter"),
               selectedColor: Colors.purple,
             ),

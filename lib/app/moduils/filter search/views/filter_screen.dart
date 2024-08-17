@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:tmdb_task/app/moduils/filter%20search/views/filter_results.dart';
+import 'package:tmdb_task/app/moduils/filter%20search/views/more_caterories.dart';
 import 'package:tmdb_task/widgtets/button1.dart';
 import 'package:tmdb_task/widgtets/textfield1.dart';
 import '../../ads controller/ads_controller.dart';
@@ -85,10 +86,16 @@ class FilterScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(width: 5.0),
-                CircleAvatar(
-                  backgroundColor: Colors.purple,
-                  radius: 25,
-                  child: Icon(Icons.account_tree_outlined, color: Colors.white),
+                InkWell(
+                  onTap: () {
+                    Get.to(() => MoreCaterories());
+                  },
+                  child: CircleAvatar(
+                    backgroundColor: Colors.purple,
+                    radius: 25,
+                    child:
+                        Icon(Icons.account_tree_outlined, color: Colors.white),
+                  ),
                 ),
               ],
             ),
@@ -116,6 +123,7 @@ class FilterScreen extends StatelessWidget {
                   });
                 } else {
                   Fluttertoast.showToast(msg: "Please Enter Tag");
+                  adController.showInterstitialAd();
                 }
               },
             ),
