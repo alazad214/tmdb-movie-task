@@ -56,7 +56,7 @@ class CustomCard extends StatelessWidget {
                   color: Colors.amber,
                 ),
                 Text(
-                  rate != null ? rate!.toStringAsFixed(1) : "7.5",
+                  rate != null ? rate!.toStringAsFixed(1) : "..",
                   style: TextStyle(
                       fontSize: 14.0,
                       color: Colors.black,

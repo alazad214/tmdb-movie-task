@@ -30,6 +30,7 @@ class MusicCard extends StatelessWidget {
                           image: tracks[i].image![0].text ?? '',
                           title: tracks[i].name ?? '...',
                           title2: tracks[i].artist?.name ?? '...',
+
                           ontap: () {
                             Get.to(() => MusicDetails(music: tracks[i]));
                           },

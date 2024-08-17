@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
@@ -35,20 +34,22 @@ class FilterScreen extends StatelessWidget {
                   padding:
                       EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                   decoration: BoxDecoration(
+                      color: Colors.purple,
                       borderRadius: BorderRadius.circular(20.0),
                       border: Border.all()),
-                  child: Text("Movies"),
+                  child: Text(
+                    "Movies",
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
                 Container(
                   padding:
                       EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                   decoration: BoxDecoration(
-                      color: Colors.purple,
                       borderRadius: BorderRadius.circular(20.0),
                       border: Border.all()),
                   child: Text(
                     "Tv Series",
-                    style: TextStyle(color: Colors.white),
                   ),
                 ),
                 Container(
@@ -88,7 +89,8 @@ class FilterScreen extends StatelessWidget {
                 SizedBox(width: 5.0),
                 InkWell(
                   onTap: () {
-                    Get.to(() => MoreCaterories());
+                    Fluttertoast.showToast(
+                        msg: "Please do not try and only use tags");
                   },
                   child: CircleAvatar(
                     backgroundColor: Colors.purple,
@@ -118,12 +120,12 @@ class FilterScreen extends StatelessWidget {
               ontap: () {
                 if (tagController.chips.isNotEmpty) {
                   adController.showInterstitialAd();
+
                   Timer(Duration(seconds: 2), () {
                     Get.to(() => FilterResults());
                   });
                 } else {
-                  Fluttertoast.showToast(msg: "Please Enter Tag");
-                  adController.showInterstitialAd();
+                  Fluttertoast.showToast(msg: "Please Add Tag");
                 }
               },
             ),
