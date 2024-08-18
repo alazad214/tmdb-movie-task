@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:tmdb_task/app/moduils/settings/views/history.dart';
 import 'package:tmdb_task/app/moduils/settings/views/terms_condition.dart';
 import 'package:tmdb_task/app/moduils/settings/widgets/settings_button.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'about_us.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -43,8 +44,13 @@ class SettingsScreen extends StatelessWidget {
                 SettingsButton(
                   icon: Icons.star_rate_outlined,
                   title: "Rate This App",
-                  ontap: () {
-                    Fluttertoast.showToast(msg: "Rating Done");
+                  ontap: () async {
+                    Fluttertoast.showToast(msg: "Rating done");
+                    final Uri url = Uri.parse(
+                        'https://play.google.com/store/apps/details?id=com.filtrate.net&pcampaignid=web_share');
+                    if (!await launchUrl(url)) {
+                      throw Exception('Could not launch $url');
+                    }
                   },
                 ),
               ],

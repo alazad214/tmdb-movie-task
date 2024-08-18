@@ -9,7 +9,8 @@ class FilterResults extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Filtered Results'),
+        title: Text('Response'),
+        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -43,7 +44,7 @@ class FilterResults extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                        "Sorry, as an AI language model, i do not have access to lists of movies with specific tags. Can you please provide me with the specific tags you are lookin for?\n\n"),
+                                        "Sorry, as an AI language model, i do not have access to lists of movies with specific tags.Still I have tried to give some movie list as per your sacrifice: \n\n"),
                                     for (int i = 0; i < movies.length; i++)
                                       Row(
                                         children: [
@@ -63,7 +64,7 @@ class FilterResults extends StatelessWidget {
                       ],
                     ),
                     SizedBox(
-                      height: 100.0,
+                      height: 50.0,
                     ),
                     Container(
                       padding:

@@ -27,8 +27,10 @@ class FilterScreen extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            Wrap(
+            crossAxisAlignment: WrapCrossAlignment.start,
+              runSpacing: 10,
+              spacing: 10,
               children: [
                 Container(
                   padding:
@@ -42,24 +44,36 @@ class FilterScreen extends StatelessWidget {
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
-                Container(
-                  padding:
-                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20.0),
-                      border: Border.all()),
-                  child: Text(
-                    "Tv Series",
+                InkWell(
+                  onTap: (){
+                    Fluttertoast.showToast(msg: "This function has not been created");
+                  },
+                  child: Container(
+                    padding:
+                        EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20.0),
+                        border: Border.all()),
+                    child: Text(
+                      "Tv Series",
+                    ),
+                  ),
+                ), InkWell(
+                  onTap: (){
+                    Fluttertoast.showToast(msg: "This function has not been created");
+                  },
+                  child: Container(
+                    padding:
+                        EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20.0),
+                        border: Border.all()),
+                    child: Text(
+                      "Music",
+                    ),
                   ),
                 ),
-                Container(
-                  padding:
-                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20.0),
-                      border: Border.all()),
-                  child: Text("Music"),
-                ),
+
               ],
             ),
             SizedBox(height: 20.0),

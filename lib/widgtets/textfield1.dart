@@ -8,6 +8,7 @@ class Textfield1 extends StatelessWidget {
       this.validation,
       this.obscuretext,
       this.onchanged,
+
       this.controller, this.hinttext2});
 
   final hinttext;
@@ -17,6 +18,7 @@ class Textfield1 extends StatelessWidget {
   final onchanged;
   final controller;
   final hinttext2;
+
 
   @override
   Widget build(BuildContext context) {

@@ -16,11 +16,15 @@ class BottomNavScreen extends StatelessWidget {
           onTap: controller.changeIndex,
           items: [
             SalomonBottomBarItem(
-              icon: const Icon(Icons.home_outlined),
+
+              icon: const Icon(
+                Icons.home_outlined,
+                color: Colors.black54,
+              ),
               title: const Text(
                 "Home",
                 style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.black54,
                 ),
               ),
               selectedColor: Colors.teal.withOpacity(0.2),
@@ -32,7 +36,7 @@ class BottomNavScreen extends StatelessWidget {
             ),
             SalomonBottomBarItem(
               icon: const Icon(Icons.directions_boat),
-              title: const Text("Filter"),
+              title: const Text("Tag"),
               selectedColor: Colors.purple,
             ),
             SalomonBottomBarItem(
